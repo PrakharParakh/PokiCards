@@ -21,9 +21,9 @@ struct MainTabView: View {
                     Label("Bookmarks", systemImage: "bookmark.fill")
                 }
 
-            ProfileView() // Profile Tab
+          SettingsView() // Settings Tab
                 .tabItem {
-                    Label("Profile", systemImage: "person.fill")
+                    Label("Settings", systemImage: "gearshape.fill")
                 }
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct SettingsView: View {
     var body: some View {
         VStack {
             Text("Profile")
