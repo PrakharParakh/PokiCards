@@ -100,7 +100,3 @@ open PokiCardsApp.xcodeproj
 ## Contributing
 
 If you'd like to contribute to the app, please submit a pull request or open an issue for suggestions.
-
----
-
-This roadmap gives you a clear structure for developing and scaling the PokiCardsApp with upcoming features and improvements.
