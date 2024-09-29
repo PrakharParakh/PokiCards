@@ -1,15 +1,25 @@
-struct BookmarksView: View {
-    @StateObject var bookmarksViewModel = BookmarksViewModel()
+//
+//  BookmarksView.swift
+//  PokiCards
+//
+//  Created by Pradip Awasthi on 29/09/24.
+//
 
+import SwiftUI
+
+struct BookmarksView: View {
     var body: some View {
-        NavigationView {
-            List(bookmarksViewModel.bookmarkedPokemons) { pokemon in
-                Text(pokemon.name ?? "Unknown")
-            }
-            .navigationTitle("Bookmarks")
-        }
-        .onAppear {
-            bookmarksViewModel.fetchBookmarks()
-        }
+      VStack {
+          Text("Bookmarks")
+              .font(.largeTitle)
+              .padding()
+          
+          Text("Coming soon...")
+              .font(.title)
+              .padding()
+          
+          // Add other Bookmarks-related views
+      }
+      
     }
 }

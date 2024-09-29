@@ -1,7 +1,17 @@
+//
+//  MainTabView.swift
+//  PokiCards
+//
+//  Created by Pradip Awasthi on 29/09/24.
+//
+
+import SwiftUI
+
+
 struct MainTabView: View {
     var body: some View {
         TabView {
-            HomeView() // Home Tab
+            HomeStackView() // Home Tab
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
