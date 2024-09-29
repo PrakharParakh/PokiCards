@@ -92,7 +92,7 @@ To run the project locally:
 ### Installation
 
 ```bash
-git clone https://github.com/your-repository/PokiCardsApp.git
+git clone https://github.com/PrakharParakh/PokiCards.git
 cd PokiCardsApp
 open PokiCardsApp.xcodeproj
 ```
