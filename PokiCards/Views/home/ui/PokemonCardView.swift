@@ -63,7 +63,7 @@ struct PokemonCardView: View {
               .fontWeight(.semibold)
               .foregroundColor(pokemon?.textColor)
           }
-          Text(pokemon?.moves.flavorTextEntries?.first?.flavorText ?? "")
+          Text(pokemon?.moves.flavorTextEntries?.first?.flavorText?.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\u{0C}", with: " ") ?? "")
             .font(.callout)
             .fontWeight(.medium)
             .foregroundColor(pokemon?.textColor)
@@ -77,7 +77,7 @@ struct PokemonCardView: View {
             .foregroundColor(pokemon?.textColor)
             .padding()
           
-          Text(pokemon?.species.flavorTextEntries?.first?.flavorText?.replacingOccurrences(of: "\n", with: " ") ?? "")
+          Text(pokemon?.species.flavorTextEntries?.first?.flavorText?.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\u{0C}", with: " ") ?? "")
             .font(.subheadline)
             .fontWeight(.medium)
             .foregroundColor(pokemon?.textColor)

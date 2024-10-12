@@ -24,8 +24,8 @@ struct HomeStackView: View {
           
           PokemonCardView(pokemon: pokemon)
             .frame(width: UIScreen.main.bounds.width - 32, height: UIScreen.main.bounds.height / 1.5)
-            .offset(i == topCardIndex ? offset : .zero)
-            .rotationEffect(i == topCardIndex ? .degrees(Double(offset.width / 20)) : .zero)
+            .offset(i == topCardIndex ? offset : CGSize(width: 80, height: -20))
+            .rotationEffect(i == topCardIndex ? .degrees(Double(offset.width / 20)) : .degrees(5))
             .scaleEffect(i == topCardIndex ? 1 : 0.95)
             .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.7, blendDuration: 0), value: offset)
             .gesture(
