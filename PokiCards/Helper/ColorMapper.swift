@@ -34,6 +34,21 @@ enum ColorMapper: String  {
     }
   }
   
+  var textColor: Color {
+    switch self {
+    case .black: return Color.white
+    case .blue: return  Color.white
+    case .brown: return  Color.white
+    case .gray: return  Color.white
+    case .green: return  Color.white
+    case .pink: return  Color.white
+    case .purple: return  Color.white
+    case .red: return  Color.white
+    case .white: return Color.black
+    case .yellow: return Color.black
+    }
+  }
+  
   init?(name: String) {
     self.init(rawValue: name.lowercased())
   }

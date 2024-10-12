@@ -27,6 +27,7 @@ struct PokemonDetail: Codable {
   let weight: Int?
   let sprites: Sprites?
   let species: PokemonGenericModel?
+  let types: [PokemonType]?
   
   enum CodingKeys: String, CodingKey {
     case id
@@ -36,6 +37,7 @@ struct PokemonDetail: Codable {
     case weight
     case sprites
     case species
+    case types
   }
 }
 

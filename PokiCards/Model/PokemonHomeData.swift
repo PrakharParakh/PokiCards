@@ -20,12 +20,30 @@ struct PokemonHomeData: Identifiable {
     return detail.sprites?.other?.officialArtwork?.frontDefault
   }
   
-  var backgroundColor: Color? {
-    if let pokemonColor = ColorMapper(name: species.color?.name ?? "yellow") {
+  var backgroundColor: Color {
+    if let pokemonColor = ColorMapper(name: species.color?.name ?? "white") {
       let color = pokemonColor.color
       return color
     } else {
-      return .yellow
+      return .white
+    }
+  }
+  
+  var textColor: Color {
+    if let pokemonColor = ColorMapper(name: species.color?.name ?? "black") {
+      let color = pokemonColor.textColor
+      return color
+    } else {
+      return .black
+    }
+  }
+  
+  var typeImage: String {
+    if let type = PokemonTypeMapper(type: detail.types?.first?.type?.name ?? "normal") {
+      let image = type.typeImage
+      return image
+    } else {
+      return "ic_normal"
     }
   }
 }
