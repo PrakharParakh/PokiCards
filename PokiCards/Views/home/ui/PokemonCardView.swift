@@ -44,16 +44,40 @@ struct PokemonCardView: View {
         KFImage(URL(string: pokemon?.imageUrl ?? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png"))
           .resizable()
           .scaledToFit()
-          .frame(height: 250)
+          .frame(maxHeight: 250)
+        
+        VStack(alignment: .leading) {
+          HStack {
+            Image(pokemon?.moveTypeImage ?? "ic_fire")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 24)
+            Spacer()
+            Text(pokemon?.detail.moves?.first?.move?.name ?? "")
+              .font(.title3)
+              .fontWeight(.semibold)
+              .foregroundColor(pokemon?.textColor)
+            Spacer()
+            Text("\(pokemon?.moves.power ?? 0)")
+              .font(.title3)
+              .fontWeight(.semibold)
+              .foregroundColor(pokemon?.textColor)
+          }
+          Text(pokemon?.moves.flavorTextEntries?.first?.flavorText ?? "")
+            .font(.callout)
+            .fontWeight(.medium)
+            .foregroundColor(pokemon?.textColor)
+        }
+        .padding(.horizontal)
         
         VStack(spacing: -16) {
-          Text(pokemon?.name ?? "Pika")
+          Text(pokemon?.name ?? "")
             .font(.title)
             .fontWeight(.bold)
             .foregroundColor(pokemon?.textColor)
             .padding()
           
-          Text(pokemon?.species.flavorTextEntries?.first?.flavorText?.replacingOccurrences(of: "\n", with: "") ?? "Hola Amiafadfj dfj    dfj")
+          Text(pokemon?.species.flavorTextEntries?.first?.flavorText?.replacingOccurrences(of: "\n", with: " ") ?? "")
             .font(.subheadline)
             .fontWeight(.medium)
             .foregroundColor(pokemon?.textColor)

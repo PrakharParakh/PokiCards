@@ -11,6 +11,7 @@ struct PokemonHomeData: Identifiable {
   let id = UUID()
   let detail: PokemonDetail
   let species: PokemonSpeciesResponse
+  let moves: PokemonMoveDetailResponse
   
   var name: String? {
     return detail.name?.capitalized
@@ -44,6 +45,15 @@ struct PokemonHomeData: Identifiable {
       return image
     } else {
       return "ic_normal"
+    }
+  }
+  
+  var moveTypeImage: String {
+    if let moveType = PokemonTypeMapper(type: moves.moveType?.name ?? "fire") {
+      let image = moveType.typeImage
+      return image
+    } else {
+      return "ic_fire"
     }
   }
 }

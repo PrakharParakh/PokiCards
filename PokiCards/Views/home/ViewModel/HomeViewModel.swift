@@ -59,7 +59,10 @@ class HomeViewModel: ObservableObject {
       let speciesEndpoint = FetchPokemonSpecies(speciesURL: pokemonDetail.species?.url ?? "")
       let pokemonSpecies: PokemonSpeciesResponse = try await apiClient.request(endpoint: speciesEndpoint)
       
-      return PokemonHomeData(detail: pokemonDetail, species: pokemonSpecies)
+      let movesEndpoint = FetchPokemonMoves(movesURL: pokemonDetail.moves?.first?.move?.url ?? "")
+      let pokemonMove: PokemonMoveDetailResponse = try await apiClient.request(endpoint: movesEndpoint)
+      
+      return PokemonHomeData(detail: pokemonDetail, species: pokemonSpecies, moves: pokemonMove)
     } catch {
       print("Failed to load data for Pokémon: \(pokemonInfo.name) - \(error)")
       return nil
